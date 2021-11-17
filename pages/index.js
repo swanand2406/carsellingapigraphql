@@ -1,14 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+// import styles from '../../styles/Home.module.css'
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
 import Link from 'next/link'
+
 
 export default function Home({ sell }) {
   console.log("Sell", sell)
   return (
-<div>
-  <h1>Hey</h1>
+    <div>
+      <h1 className="text-blue-500">Hello</h1>
     </div>
   )
 }
