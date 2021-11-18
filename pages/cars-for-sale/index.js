@@ -23,7 +23,7 @@ export default function Home({ sell }) {
             {/* <div className="max-w-sm rounded overflow-hidden shadow-lg w-screen  grid grid-cols-2 gap-12 my-8"> */}
             {sell.map(key => {
               return (
-                <div className="my-4 border-2 p-4 transition duration-500 ease-in-out bg-white-600 hover:bg-gray-200 transform hover:-translate-y-1 hover:scale-110    border-gray-500">
+                <div className=" cursor-pointer my-4 border-2 p-4 transition duration-500 ease-in-out bg-white-600 hover:bg-gray-200 transform hover:-translate-y-1 hover:scale-110    border-gray-500">
 
                   <Link href={'/cars-for-sale/' + key.make} key={key.vehicle_key} passHref>
                     <div >
