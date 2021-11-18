@@ -8,7 +8,7 @@ export default function Home({ sell }) {
   console.log("Sell", sell)
   return (
 <div>
-  <h1>Hey</h1>
+  <h1 className="text-red-700 font-bold">Hey</h1>
     </div>
   )
 }
