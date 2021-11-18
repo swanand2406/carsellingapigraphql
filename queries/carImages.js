@@ -1,3 +1,4 @@
+//Car image graphql query
 import { gql } from "@apollo/client"
 
 const CAR_IMAGES = gql`

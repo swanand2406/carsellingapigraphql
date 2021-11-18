@@ -1,3 +1,4 @@
+//Car Listing page details graphql query
 import { gql } from "@apollo/client"
 
 const CAR_MAIN_DETAILS = gql`{
