@@ -7,6 +7,7 @@ import Link from 'next/link'
 
 export default function Home({ sell }) {
   console.log("Sell", sell)
+
   return (
     <div>
       <Head>
@@ -21,27 +22,26 @@ export default function Home({ sell }) {
 
           <div className="rounded  shadow-lg border-8  p-2 gap-x-8  grid grid-cols-2 ">
             {/* <div className="max-w-sm rounded overflow-hidden shadow-lg w-screen  grid grid-cols-2 gap-12 my-8"> */}
-            {sell.map(key => {
+            {sell.map((data,index) => {
               return (
-                <div className=" cursor-pointer my-4 border-2 p-4 transition duration-500 ease-in-out bg-white-600 hover:bg-gray-200 transform hover:-translate-y-1 hover:scale-110    border-gray-500">
-
-                  <Link href={'/cars-for-sale/' + key.make} key={key.vehicle_key} passHref>
+                <div key={index} className="my-4 border-2 p-4 transition duration-500 ease-in-out bg-white-600 hover:bg-gray-200 transform hover:-translate-y-1 hover:scale-110    border-gray-500">
+                  <Link href={'/cars-for-sale/' + data.make} key={data.vehicle_key} passHref>
                     <div >
-                      <img src={key.main_image} alt="carImage" style={{ width: "24rem" }} />
-                      <h3><b>  {key.year} {key.make} {key.model} </b></h3>
-                      <p>${key.price_drive_away}</p>
+                      <img src={data.main_image} alt="carImage" style={{ width: "24rem" }} />
+                      <h3><b>  {data.year} {data.make} {data.model} </b></h3>
+                      <p>${data.price_drive_away}</p>
                       <ul className="grid grid-cols-2 " style={{ listStyle: "inside" }}>
                         <li>
-                          {key.transmission}
+                          {data.transmission}
                         </li>
                         <li >
-                        <b>odometer:</b> {key.odometer}
+                        <b>odometer:</b> {data.odometer}
                         </li>
                         <li>
-                          <b>Color:</b>{key.colour}
+                          <b>Color:</b>{data.colour}
                         </li>
                         <li>
-                          <b>Seat Capacity: </b>{key.seat_capacity}
+                          <b>Seat Capacity: </b>{data.seat_capacity}
                         </li>
                       </ul>
                     </div>
@@ -57,7 +57,8 @@ export default function Home({ sell }) {
   )
 }
 
-export async function getStaticProps() {
+
+export const getServerSideProps =  async pageContext =>  {
 
   const client = new ApolloClient({
 
@@ -83,9 +84,8 @@ export async function getStaticProps() {
         }
       }
     }`
-
-
   })
+  
   console.log(data);
   return {
     props: {
