@@ -25,7 +25,7 @@ export default function Home({ sell }) {
             {sell.map((data,index) => {
               return (
                 <div key={index} className="my-4 border-2 p-4 transition duration-500 ease-in-out bg-white-600 hover:bg-gray-200 transform hover:-translate-y-1 hover:scale-110    border-gray-500">
-                  <Link href={'/cars-for-sale/' + data.make} key={data.vehicle_key} passHref>
+                  <Link href={'/cars-for-sale/' + data.vehicle_key} key={data.vehicle_key} passHref>
                     <div >
                       <img src={data.main_image} alt="carImage" style={{ width: "24rem" }} />
                       <h3><b>  {data.year} {data.make} {data.model} </b></h3>
