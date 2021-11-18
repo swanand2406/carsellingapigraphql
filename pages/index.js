@@ -12,6 +12,7 @@ export default function Home() {
       </center>
       <strong>
         <div>
+          
           <marquee width="100%" scrollamount="12" direction="left" height="90%">
             <div className="text-3xl text-purple-600">One Stop to Buy and Sell the car.</div>
           </marquee>

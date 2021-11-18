@@ -11,6 +11,7 @@ export default function Home({ sell }) {
         <title>Car Sell Company</title>
       </Head>
 
+
       <main >
         <center>
           <h1 className="text-4xl font-bold">Cars Listing</h1>

@@ -16,6 +16,7 @@ export const getServerSideProps = async (pageContext) => {
   const { data } = await client.query({
     query: CAR_DETAILS,
     variables: { id },
+
   });
 
   const { data: data2 } = await client.query({
